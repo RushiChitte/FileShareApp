@@ -21,7 +21,12 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: [
+      "http://localhost:3000",
+      "https://file-share-app.vercel.app",
+      "http://file-share-app.vercel.app",
+      "https://file-share-app-5h5g.vercel.app",
+    ],
   })
 );
 app.use(express.json());

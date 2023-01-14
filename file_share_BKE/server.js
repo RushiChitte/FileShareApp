@@ -38,8 +38,9 @@ app.use(
 );
 
 // Routes
+app.use("/", (req, res) => res.status(200).json({ message: "App is running" }));
 app.use("/file", require("./routes/file"));
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
   console.log("Server start at", PORT);
 });

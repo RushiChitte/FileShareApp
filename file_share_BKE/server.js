@@ -26,6 +26,7 @@ app.use(
       "https://file-share-app.vercel.app",
       "http://file-share-app.vercel.app",
       "https://file-share-app-5h5g.vercel.app",
+      "http://file-share-app-5h5g.vercel.app",
     ],
   })
 );

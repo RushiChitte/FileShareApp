@@ -6,6 +6,7 @@ import {
   Button,
   Card,
   Grid,
+  Link,
   Stack,
   TextField,
   Typography,
@@ -15,6 +16,7 @@ import { NavLink } from "react-router-dom";
 const Form = () => {
   const [image, setImage] = useState(null);
   const [responce, setResponce] = useState(null);
+  console.log("window", window.location.origin);
   const {
     handleChange,
     handleSubmit,
@@ -84,8 +86,11 @@ const Form = () => {
             <Typography variant="subtitle1">
               Share:{" "}
               <NavLink to={`download/${responce?.id || ""}`}>{`${
-                process.env.REACT_APP_API_URL
-              }${responce?.id || ""}`}</NavLink>
+                window.location.origin
+              }/${responce?.id || ""}`}</NavLink>
+            </Typography>
+            <Typography variant="subtitle1">
+              Direct Share: <Link>{responce?.secureUrl || ""}</Link>
             </Typography>
             <Button variant="contained" onClick={() => setResponce(null)}>
               Upload New

@@ -84,8 +84,8 @@ const Form = () => {
             <Typography variant="subtitle1">
               Share:{" "}
               <NavLink
-                to={`http://localhost:3000/download/${responce?.id || ""}`}
-              >{`http://localhost:3000/download/${
+                to={`${process.env.REACT_APP_API_URL}${responce?.id || ""}`}
+              >{`${process.env.REACT_APP_API_URL}${
                 responce?.id || ""
               }`}</NavLink>
             </Typography>

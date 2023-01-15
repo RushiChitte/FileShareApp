@@ -43,18 +43,17 @@ app.use("/file", require("./routes/file"));
 app.get("/home", (req, res) =>
   res.status(200).json({ message: "App is running home" })
 );
-app.get("/about", (req, res) => {
-  connet();
-  res
-    .status(200)
-    .json({
-      message: "App is running about",
-      connecyionURL: process.env.DATABASE_CONNECT_URL,
-    });
+app.get("/about", async (req, res) => {
+  const status = await connet();
+  res.status(200).json({
+    message: "App is running about",
+    connecyionURL: process.env.DATABASE_CONNECT_URL,
+    status,
+  });
 });
-app.use("/", (req, res) => {
-  connet();
-  res.status(200).json({ message: "App is running updaed 1" });
+app.use("/", async (req, res) => {
+  const status = await connet();
+  res.status(200).json({ message: "App is running updaed 2", status });
 });
 
 app.listen(PORT, () => {

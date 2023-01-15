@@ -39,10 +39,7 @@ app.use(
 
 // Routes
 app.use("/", (req, res) => res.status(200).json({ message: "App is running" }));
-express.Router("/home", (req, res) =>
-  res.status(200).json({ message: "App is running at home" })
-);
-// app.use("/file", require("./routes/file"));
+app.use("/file", require("./routes/file"));
 
 app.listen(PORT, () => {
   console.log("Server start at", PORT);

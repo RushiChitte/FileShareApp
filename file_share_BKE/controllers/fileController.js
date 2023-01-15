@@ -50,9 +50,10 @@ const getFileDataById = async (req, res) => {
       return res.status(400).json({ message: "File does not exist!" });
     }
 
-    const { fileName, format, sizeInBytes } = file[0];
+    const { fileName, format, sizeInBytes, secureUrl } = file[0];
 
     return res.status(200).json({
+      secureUrl,
       fileName,
       format,
       sizeInMB: sizeInBytes / 1024 / 1024,

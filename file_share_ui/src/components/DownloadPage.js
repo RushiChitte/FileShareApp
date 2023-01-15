@@ -1,4 +1,4 @@
-import { Box, Button, Card, Typography } from "@mui/material";
+import { Box, Button, Card, Link, Typography } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -45,6 +45,9 @@ const DownloadPage = () => {
           <Box>
             <Typography variant="subtitle1">
               File Name: {data?.fileName}
+            </Typography>
+            <Typography variant="subtitle1">
+              Open in new tab: <Link>{data?.secureUrl}</Link>
             </Typography>
             <Button variant="outlined" onClick={onFileDownload}>
               Download

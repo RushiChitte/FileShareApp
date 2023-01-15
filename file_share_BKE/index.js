@@ -39,14 +39,16 @@ app.use(
 );
 
 // Routes
+app.use("/file", require("./routes/file"));
 app.get("/home", (req, res) =>
   res.status(200).json({ message: "App is running home" })
 );
 app.get("/about", (req, res) =>
   res.status(200).json({ message: "App is running about" })
 );
-app.use("/", (req, res) => res.status(200).json({ message: "App is running" }));
-app.use("/file", require("./routes/file"));
+app.use("/", (req, res) =>
+  res.status(200).json({ message: "App is running updaed" })
+);
 
 app.listen(PORT, () => {
   console.log("Server start at", PORT);

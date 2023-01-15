@@ -83,11 +83,9 @@ const Form = () => {
             <Typography variant="h3">Share following detail</Typography>
             <Typography variant="subtitle1">
               Share:{" "}
-              <NavLink
-                to={`${process.env.REACT_APP_API_URL}${responce?.id || ""}`}
-              >{`${process.env.REACT_APP_API_URL}${
-                responce?.id || ""
-              }`}</NavLink>
+              <NavLink to={`download/${responce?.id || ""}`}>{`${
+                process.env.REACT_APP_API_URL
+              }${responce?.id || ""}`}</NavLink>
             </Typography>
             <Button variant="contained" onClick={() => setResponce(null)}>
               Upload New

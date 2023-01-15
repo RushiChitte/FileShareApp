@@ -53,7 +53,7 @@ app.get("/about", async (req, res) => {
 });
 app.use("/", async (req, res) => {
   const status = await connet();
-  res.status(200).json({ message: "App is running updaed 1", status });
+  res.status(200).json({ message: "App is running updaed 2", status });
 });
 
 app.listen(PORT, () => {

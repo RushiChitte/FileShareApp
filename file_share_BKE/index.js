@@ -2,6 +2,7 @@ const express = require("express");
 const dotnet = require("dotenv");
 const cors = require("cors");
 const { v2: cloudinary } = require("cloudinary");
+const router = express.Router();
 
 // configuraations
 dotnet.config();
@@ -38,6 +39,12 @@ app.use(
 );
 
 // Routes
+app.get("/home", (req, res) =>
+  res.status(200).json({ message: "App is running home" })
+);
+app.get("/about", (req, res) =>
+  res.status(200).json({ message: "App is running about" })
+);
 app.use("/", (req, res) => res.status(200).json({ message: "App is running" }));
 app.use("/file", require("./routes/file"));
 

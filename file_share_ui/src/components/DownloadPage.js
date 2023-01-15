@@ -1,7 +1,7 @@
 import { Box, Button, Card, Link, Typography } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import fileDownload from "js-file-download";
 
 const DownloadPage = () => {
@@ -41,6 +41,10 @@ const DownloadPage = () => {
     <Card>
       {data && (
         <>
+          <Button variant="outlined">
+            <NavLink to="/">Upload New</NavLink>
+          </Button>
+
           <Typography variant="h4">Download File</Typography>
           <Box>
             <Typography variant="subtitle1">
